@@ -376,7 +376,7 @@ h2 {
 <section id="home">
   <div class="main-container">
     <div class="image" data-aos="zoom-in">
-      <img src="main1.png" alt="Amelia" />
+      <img src="main1.png" alt="Naresh portrait" />
     </div>
     <div class="content" data-aos="fade-left">
       <h1>Hey I'm <span>Naresh</span></h1>
@@ -384,17 +384,17 @@ h2 {
       <p>
         I’m a passionate developer building engaging, responsive, and visually appealing websites & apps.
       </p>
-      <div class="social-links">
-        <a href="https://github.com/nareshptt"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/nareshptt/"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/nareshptt/"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/nareshpt23"><i class="fab fa-x-twitter"></i></a>
+      <div class="social-links" aria-label="social links">
+        <a aria-label="GitHub" href="https://github.com/nareshptt"><i class="fab fa-github"></i></a>
+        <a aria-label="LinkedIn" href="https://www.linkedin.com/in/nareshptt/"><i class="fab fa-linkedin"></i></a>
+        <a aria-label="Instagram" href="https://www.instagram.com/nareshptt/"><i class="fab fa-instagram"></i></a>
+        <a aria-label="X" href="https://x.com/nareshpt23"><i class="fab fa-x-twitter"></i></a>
       </div>
       <a href="https://drive.google.com/file/d/1m8XveUlHMy2Oay6g0IU00hQCpEB1gaKt/view?usp=sharing" 
-   target="_blank" 
-   class="btn">
-  Download Resume
-</a>
+         target="_blank" 
+         class="btn" rel="noopener">
+        Download Resume
+      </a>
     </div>
   </div>
 </section>
@@ -407,15 +407,53 @@ h2 {
   </p>
 </section>
 
-<!-- Skills -->
+<!-- Skills (UPDATED) -->
 <section id="skills" data-aos="fade-up">
   <h2>My Skills</h2>
   <div class="skills-container">
-    <div class="skill"><i class="fab fa-html5"></i><h3>HTML5</h3><p>Semantic, accessible markup for the web.</p></div>
-    <div class="skill"><i class="fab fa-css3-alt"></i><h3>CSS3</h3><p>Responsive designs with modern effects.</p></div>
-    <div class="skill"><i class="fab fa-js"></i><h3>JavaScript</h3><p>Dynamic, interactive functionality.</p></div>
-    <div class="skill"><i class="fab fa-figma"></i><h3>Figma</h3><p>Prototyping & strong visual design skills.</p></div>
+    <!-- Design -->
+    <div class="skill"><i class="fas fa-pen-ruler"></i><h3>UI & UX Design</h3><p>Human-centered design, prototypes, usability.</p></div>
+    <div class="skill"><i class="fab fa-figma"></i><h3>Figma</h3><p>Wireframes, components, design systems.</p></div>
+  <!-- Mobile -->
+    <div class="skill"><i class="fab fa-swift"></i><h3>Swift</h3><p>Modern iOS app development.</p></div>
+    <div class="skill"><i class="fab fa-apple"></i><h3>iOS</h3><p>UIKit, app lifecycles & guidelines.</p></div>
+    <div class="skill"><i class="fa-solid fa-code"></i><h3>Xcode</h3><p>Projects, simulators, debugging.</p></div>
+     <div class="skill"><i class="fab fa-android"></i><h3>Android</h3><p>Kotlin, app lifecycles & guidelines.</p></div>
+      <div class="skill"><i class="fa-solid fa-mobile-screen"></i><h3>Flutter</h3><p>Cross‑platform UI with widgets.</p></div>
+    <!-- Web Core -->
+    <div class="skill"><i class="fab fa-html5"></i><h3>HTML</h3><p>Semantic, accessible markup.</p></div>
+    <div class="skill"><i class="fab fa-css3-alt"></i><h3>CSS</h3><p>Responsive layouts, animations.</p></div>
+    <div class="skill"><i class="fab fa-js"></i><h3>JavaScript</h3><p>Interactive, dynamic experiences.</p></div>
+    <div class="skill"><i class="fab fa-react"></i><h3>React</h3><p>SPA development, hooks & state.</p></div>
+
+    <!-- Backend -->
+    <div class="skill"><i class="fab fa-node"></i><h3>Node.js</h3><p>APIs, tooling, server-side JS.</p></div>
+    <div class="skill"><i class="fa-solid fa-server"></i><h3>Express.js</h3><p>RESTful services & middleware.</p></div>
+    <div class="skill"><i class="fa-solid fa-database"></i><h3>MongoDB</h3><p>Document data modeling & CRUD.</p></div>
+    <div class="skill"><i class="fa-solid fa-database"></i><h3>MySQL</h3><p>Relational schemas & queries.</p></div>
+    <div class="skill"><i class="fa-solid fa-diagram-project"></i><h3>MVC</h3><p>Separation of concerns & patterns.</p></div>
+
+  
+    
+   
+    <div class="skill"><i class="fa-solid fa-code"></i><h3>Dart</h3><p>Strongly-typed, async programming.</p></div>
+
+    <!-- Programming -->
+    <div class="skill"><i class="fa-solid fa-code"></i><h3>C++ Programming</h3><p>OOP, STL, performance.</p></div>
+    <div class="skill"><i class="fa-solid fa-brain"></i><h3>AI/ML</h3><p>Smart models & automation.</p>
+
+      
   </div>
+  <div class="skill">
+  <i class="fa-brands fa-github"></i>
+  <h3>GitHub</h3>
+
+  <p>Version control & collaboration.</p>
+
+</div>
+</p>
+</div>
+
 </section>
 
 <!-- Projects -->
@@ -423,21 +461,21 @@ h2 {
   <h2>My Projects</h2>
   <div class="projects-container">
     <div class="project">
-      <img src="https://via.placeholder.com/400x200" />
+      <img src="https://via.placeholder.com/400x200" alt="Portfolio Website preview" />
       <div class="project-details">
         <h3>Portfolio Website</h3>
         <p>Showcasing skills, experience & projects in a responsive design.</p>
       </div>
     </div>
     <div class="project">
-      <img src="https://via.placeholder.com/400x200" />
+      <img src="https://via.placeholder.com/400x200" alt="E-commerce Platform preview" />
       <div class="project-details">
         <h3>E-commerce Platform</h3>
         <p>Feature-rich online store with modern UI/UX principles.</p>
       </div>
     </div>
     <div class="project">
-      <img src="https://via.placeholder.com/400x200" />
+      <img src="https://via.placeholder.com/400x200" alt="Blog Platform preview" />
       <div class="project-details">
         <h3>Blog Platform</h3>
         <p>SEO-optimized blog platform with engaging UI.</p>
@@ -446,7 +484,6 @@ h2 {
   </div>
 </section>
 
-<!-- Contact -->
 <!-- Contact -->
 <section id="contact" data-aos="fade-up">
   <h2>Contact Me</h2>
@@ -494,7 +531,7 @@ AOS.init({ duration: 800, once: true });
 /* Typewriter Effect */
 document.addEventListener('DOMContentLoaded', () => {
   const textElement = document.getElementById('typewriter-text');
-  const words = ['Mobile App Developer','Web Developer', 'UI/UX Designer', 'Freelancer',];
+  const words = ['Mobile App Developer','Web Developer', 'UI/UX Designer', 'Freelancer'];
   let wordIndex = 0, charIndex = 0, isDeleting = false;
 
   function type() {
