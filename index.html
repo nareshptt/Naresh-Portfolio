@@ -1,366 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="icon" type="image/png" href="main1.png" />
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Naresh Portfolio</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-<style>
-:root {
-  --primary: #ff4a57;
-  --dark: #1a1a1a;
-  --light-bg: #f8f9fa;
-  --text: #333;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  background: var(--light-bg);
-  color: var(--text);
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ===== Navbar ===== */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--dark);
-  padding: 12px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-.nav-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo span {
-  color: var(--primary);
-  font-weight: 700;
-  font-size: 1.8rem;
-}
-.links {
-  display: flex;
-  gap: 1.5rem;
-}
-.links a {
-  color: white;
-  font-weight: 500;
-  position: relative;
-}
-.links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary);
-  transition: 0.3s;
-}
-.links a:hover::after {
-  width: 100%;
-}
-.contact-btn {
-  padding: 6px 15px;
-  border: 2px solid var(--primary);
-  border-radius: 20px;
-  transition: 0.3s;
-}
-.contact-btn:hover {
-  background: var(--primary);
-}
-
-/* Mobile Menu */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  color: white;
-  cursor: pointer;
-}
-.btn {
-  background: var(--primary);
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-  display: inline-block;
-  text-align: center;
-}
-.btn:hover {
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-}
-
-
-/* ===== Hero ===== */
-#home {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
-  color: white;
-  padding: 60px 0;
-}
-.main-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-  justify-content: center;
-}
-.image img {
-  width: 320px;
-  border-radius: 15px;
-}
-.content {
-  flex: 1 1 350px;
-}
-.content h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.2;
-}
-.content h1 span {
-  color: var(--primary);
-}
-.typewriter {
-  margin-top: 10px;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-  font-weight: 500;
-}
-.typewriter span {
-  color: var(--primary);
-  border-right: 2px solid var(--primary);
-  padding-right: 5px;
-}
-.content p {
-  margin-top: 15px;
-  line-height: 1.6;
-  max-width: 500px;
-}
-.social-links {
-  margin: 20px 0;
-}
-.social-links i {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1.5px solid var(--primary);
-  color: var(--primary);
-  margin: 5px;
-  transition: 0.3s;
-}
-.social-links i:hover {
-  background: var(--primary);
-  color: white;
-  transform: scale(1.1);
-}
-button {
-  background: var(--primary);
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-button:hover {
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-}
-
-/* ===== Section Common ===== */
-section {
-  padding: 70px 20px;
-}
-section:nth-child(even) {
-  background: white;
-}
-h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 40px;
-}
-
-/* ===== About ===== */
-#about p {
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-  line-height: 1.8;
-  color: #555;
-}
-
-/* ===== Skills ===== */
-.skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-.skill {
-  background: white;
-  border-radius: 10px;
-  padding: 30px;
-  text-align: center;
-  transition: 0.3s;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-.skill i {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 10px;
-}
-.skill:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* ===== Projects ===== */
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-.project {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-}
-.project img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.project-details {
-  padding: 15px;
-}
-.project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-.project-details h3 {
-  color: var(--primary);
-  margin-bottom: 10px;
-}
-
-/* ===== Contact ===== */
-.contact-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  max-width: 1000px;
-  margin: auto;
-}
-.contact-form {
-  background: white;
-  flex: 1 1 60%;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-}
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 5px rgba(255, 74, 87, 0.4);
-  outline: none;
-}
-.contact-form button {
-  width: 100%;
-}
-
-.contact-info {
-  flex: 1 1 35%;
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-}
-.contact-info h3 {
-  color: var(--primary);
-  margin-bottom: 15px;
-}
-.contact-info p {
-  margin-bottom: 10px;
-}
-.contact-info i {
-  color: var(--primary);
-  margin-right: 8px;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .links {
-    display: none;
-    flex-direction: column;
-    background: var(--dark);
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: 10px;
-    border-radius: 8px;
-  }
-  .links.show {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-  }
-  .image img {
-    max-width: 250px;
-  }
-  .content {
-    text-align: center;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naresh Portfolio</title>
+  <link rel="icon" href="main1.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- Navbar -->
 <nav>
   <div class="nav-container">
-    <div class="logo"><span>Naresh</span></div>
+    <div class="logo">Naresh</div>
     <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     <div class="links">
       <a href="#home">Home</a>
@@ -372,193 +27,96 @@ h2 {
   </div>
 </nav>
 
-<!-- Home -->
+<!-- Home Section -->
 <section id="home">
   <div class="main-container">
     <div class="image" data-aos="zoom-in">
-      <img src="main1.png" alt="Naresh portrait" />
+      <img src="main1.png" alt="Naresh portrait">
     </div>
     <div class="content" data-aos="fade-left">
       <h1>Hey I'm <span>Naresh</span></h1>
       <div class="typewriter">I'm a <span id="typewriter-text"></span></div>
-      <p>
-        I’m a passionate developer building engaging, responsive, and visually appealing websites & apps.
-      </p>
-      <div class="social-links" aria-label="social links">
-        <a aria-label="GitHub" href="https://github.com/nareshptt"><i class="fab fa-github"></i></a>
-        <a aria-label="LinkedIn" href="https://www.linkedin.com/in/nareshptt/"><i class="fab fa-linkedin"></i></a>
-        <a aria-label="Instagram" href="https://www.instagram.com/nareshptt/"><i class="fab fa-instagram"></i></a>
-        <a aria-label="X" href="https://x.com/nareshpt23"><i class="fab fa-x-twitter"></i></a>
+      <p>Passionate developer building responsive & visually appealing websites and apps.</p>
+      <div class="social-links">
+        <a href="https://github.com/nareshptt" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/nareshptt/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/nareshptt/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/nareshpt23" aria-label="X"><i class="fab fa-x-twitter"></i></a>
       </div>
-      <a href="https://drive.google.com/file/d/1m8XveUlHMy2Oay6g0IU00hQCpEB1gaKt/view?usp=sharing" 
-         target="_blank" 
-         class="btn" rel="noopener">
-        Download Resume
-      </a>
+      <a href="https://drive.google.com/file/d/1m8XveUlHMy2Oay6g0IU00hQCpEB1gaKt/view?usp=sharing" class="btn" target="_blank" rel="noopener">Download Resume</a>
     </div>
   </div>
 </section>
 
-<!-- About -->
+<!-- About Section -->
 <section id="about" data-aos="fade-up">
   <h2>About Me</h2>
-  <p>
-    I’m Naresh, a self-taught developer & designer, known for blending creativity with technical skills to build seamless & beautiful user experiences.
-  </p>
+  <div class="about-card">
+    <p>Self-taught developer & designer blending creativity with technical skills to build seamless and beautiful user experiences. Passionate about creating engaging websites & apps that delight users.</p>
+  </div>
 </section>
 
-<!-- Skills (UPDATED) -->
+
+<!-- Skills Section -->
 <section id="skills" data-aos="fade-up">
   <h2>My Skills</h2>
   <div class="skills-container">
-    <!-- Design -->
-    <div class="skill"><i class="fas fa-pen-ruler"></i><h3>UI & UX Design</h3><p>Human-centered design, prototypes, usability.</p></div>
+    <div class="skill"><i class="fas fa-pen-ruler"></i><h3>UI & UX</h3><p>Design, prototypes, usability.</p></div>
     <div class="skill"><i class="fab fa-figma"></i><h3>Figma</h3><p>Wireframes, components, design systems.</p></div>
-  <!-- Mobile -->
-    <div class="skill"><i class="fab fa-swift"></i><h3>Swift</h3><p>Modern iOS app development.</p></div>
-    <div class="skill"><i class="fab fa-apple"></i><h3>iOS</h3><p>UIKit, app lifecycles & guidelines.</p></div>
-    <div class="skill"><i class="fa-solid fa-code"></i><h3>Xcode</h3><p>Projects, simulators, debugging.</p></div>
-     <div class="skill"><i class="fab fa-android"></i><h3>Android</h3><p>Kotlin, app lifecycles & guidelines.</p></div>
-      <div class="skill"><i class="fa-solid fa-mobile-screen"></i><h3>Flutter</h3><p>Cross‑platform UI with widgets.</p></div>
-    <!-- Web Core -->
-    <div class="skill"><i class="fab fa-html5"></i><h3>HTML</h3><p>Semantic, accessible markup.</p></div>
-    <div class="skill"><i class="fab fa-css3-alt"></i><h3>CSS</h3><p>Responsive layouts, animations.</p></div>
-    <div class="skill"><i class="fab fa-js"></i><h3>JavaScript</h3><p>Interactive, dynamic experiences.</p></div>
-    <div class="skill"><i class="fab fa-react"></i><h3>React</h3><p>SPA development, hooks & state.</p></div>
-
-    <!-- Backend -->
-    <div class="skill"><i class="fab fa-node"></i><h3>Node.js</h3><p>APIs, tooling, server-side JS.</p></div>
-    <div class="skill"><i class="fa-solid fa-server"></i><h3>Express.js</h3><p>RESTful services & middleware.</p></div>
-    <div class="skill"><i class="fa-solid fa-database"></i><h3>MongoDB</h3><p>Document data modeling & CRUD.</p></div>
-    <div class="skill"><i class="fa-solid fa-database"></i><h3>MySQL</h3><p>Relational schemas & queries.</p></div>
-    <div class="skill"><i class="fa-solid fa-diagram-project"></i><h3>MVC</h3><p>Separation of concerns & patterns.</p></div>
-
-  
-    
-   
-    <div class="skill"><i class="fa-solid fa-code"></i><h3>Dart</h3><p>Strongly-typed, async programming.</p></div>
-
-    <!-- Programming -->
-    <div class="skill"><i class="fa-solid fa-code"></i><h3>C++ Programming</h3><p>OOP, STL, performance.</p></div>
-    <div class="skill"><i class="fa-solid fa-brain"></i><h3>AI/ML</h3><p>Smart models & automation.</p>
-
-      
+    <div class="skill"><i class="fa-brands fa-swift"></i><h3>Swift</h3><p>iOS app development.</p></div>
+    <div class="skill"><i class="fab fa-apple"></i><h3>iOS</h3><p>UIKit & app lifecycle.</p></div>
+    <div class="skill"><i class="fas fa-code"></i><h3>Xcode</h3><p>Projects & debugging.</p></div>
+    <div class="skill"><i class="fab fa-android"></i><h3>Android</h3><p>Kotlin apps & lifecycle.</p></div>
+    <div class="skill"><i class="fas fa-mobile-screen-button"></i><h3>Flutter</h3><p>Cross-platform UI development.</p></div>
+    <div class="skill"><i class="fab fa-html5"></i><h3>HTML</h3><p>Semantic markup.</p></div>
+    <div class="skill"><i class="fab fa-css3-alt"></i><h3>CSS</h3><p>Responsive layouts & animations.</p></div>
+    <div class="skill"><i class="fab fa-js"></i><h3>JavaScript</h3><p>Dynamic & interactive websites.</p></div>
+    <div class="skill"><i class="fab fa-react"></i><h3>React</h3><p>SPA development & state management.</p></div>
+    <div class="skill"><i class="fab fa-node"></i><h3>Node.js</h3><p>Server-side JS & APIs.</p></div>
+    <div class="skill"><i class="fas fa-server"></i><h3>Express.js</h3><p>RESTful services & middleware.</p></div>
+    <div class="skill"><i class="fas fa-database"></i><h3>MongoDB</h3><p>Document-based DB & CRUD.</p></div>
+    <div class="skill"><i class="fas fa-database"></i><h3>MySQL</h3><p>Relational DB & queries.</p></div>
+    <div class="skill"><i class="fas fa-diagram-project"></i><h3>MVC</h3><p>Design patterns & separation of concerns.</p></div>
+    <div class="skill"><i class="fas fa-code"></i><h3>Dart</h3><p>Strongly-typed, async programming.</p></div>
+    <div class="skill"><i class="fas fa-code"></i><h3>C++</h3><p>OOP, STL & performance.</p></div>
+    <div class="skill"><i class="fas fa-brain"></i><h3>AI/ML</h3><p>Smart models & automation.</p></div>
+    <div class="skill"><i class="fab fa-github"></i><h3>GitHub</h3><p>Version control & collaboration.</p></div>
   </div>
-  <div class="skill">
-  <i class="fa-brands fa-github"></i>
-  <h3>GitHub</h3>
-
-  <p>Version control & collaboration.</p>
-
-</div>
-</p>
-</div>
-
 </section>
 
-<!-- Projects -->
+<!-- Projects Section -->
 <section id="projects" data-aos="fade-up">
-  <h2>My Projects</h2>
+  <h2>My Work</h2>
   <div class="projects-container">
-    <div class="project">
-      <img src="https://via.placeholder.com/400x200" alt="Portfolio Website preview" />
-      <div class="project-details">
-        <h3>Portfolio Website</h3>
-        <p>Showcasing skills, experience & projects in a responsive design.</p>
-      </div>
-    </div>
-    <div class="project">
-      <img src="https://via.placeholder.com/400x200" alt="E-commerce Platform preview" />
-      <div class="project-details">
-        <h3>E-commerce Platform</h3>
-        <p>Feature-rich online store with modern UI/UX principles.</p>
-      </div>
-    </div>
-    <div class="project">
-      <img src="https://via.placeholder.com/400x200" alt="Blog Platform preview" />
-      <div class="project-details">
-        <h3>Blog Platform</h3>
-        <p>SEO-optimized blog platform with engaging UI.</p>
-      </div>
+    <div class="upcoming-project-card" data-aos="fade-up">
+      <i class="fas fa-hourglass-half"></i>
+      <h3>Coming Soon</h3>
+      <p>Exciting projects are on the way. Stay tuned!</p>
     </div>
   </div>
 </section>
 
-<!-- Contact -->
+
+<!-- Contact Section -->
 <section id="contact" data-aos="fade-up">
   <h2>Contact Me</h2>
   <div class="contact-section">
     <form id="contactForm" class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
     <div class="contact-info">
       <h3>Get in Touch</h3>
-      <p><i class="fas fa-envelope"></i>nareshpt08@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +91 6353635764</p>
+      <p><i class="fas fa-envelope"></i> naresh@example.com</p>
+      <p><i class="fas fa-phone"></i> +91 12345 67890</p>
       <p><i class="fas fa-map-marker-alt"></i> Gujarat, India</p>
     </div>
   </div>
 </section>
 
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  fetch("https://script.google.com/macros/s/AKfycbwIg6COOcd-SnW3ZPIvYFagRuNqzaIai5kcHSAZfGmuRaRt32IS9R_kdRT_mccwPVIr/exec", {
-    method: "POST",
-    body: new FormData(this)
-  })
-  .then(res => res.text())
-  .then(data => {
-    alert("Message sent successfully!");
-    this.reset();
-  })
-  .catch(err => {
-    console.error(err);
-    alert("Error sending message. Please try again.");
-  });
-});
-</script>
-
-<!-- Scripts -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-AOS.init({ duration: 800, once: true });
-
-/* Typewriter Effect */
-document.addEventListener('DOMContentLoaded', () => {
-  const textElement = document.getElementById('typewriter-text');
-  const words = ['Mobile App Developer','Web Developer', 'UI/UX Designer', 'Freelancer'];
-  let wordIndex = 0, charIndex = 0, isDeleting = false;
-
-  function type() {
-    const currentWord = words[wordIndex];
-    if (!isDeleting) {
-      textElement.textContent = currentWord.substring(0, charIndex++);
-      if (charIndex > currentWord.length) {
-        isDeleting = true;
-        setTimeout(type, 1500);
-        return;
-      }
-    } else {
-      textElement.textContent = currentWord.substring(0, charIndex--);
-      if (charIndex < 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-      }
-    }
-    setTimeout(type, isDeleting ? 100 : 150);
-  }
-  type();
-});
-
-/* Mobile Menu Toggle */
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-  document.querySelector('.links').classList.toggle('show');
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
