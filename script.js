@@ -107,3 +107,17 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     submitButton.textContent = originalText;
   });
 });
+
+window.addEventListener('scroll', () => {
+  const footer = document.querySelector('.bottom-footer');
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const windowHeight = window.innerHeight;
+  const docHeight = document.documentElement.scrollHeight;
+
+  // Show footer **only when user hits bottom**
+  if (scrollTop + windowHeight >= docHeight) {
+    footer.style.bottom = '0';
+  } else {
+    footer.style.bottom = '-60px';
+  }
+});
