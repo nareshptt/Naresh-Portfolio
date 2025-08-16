@@ -32,20 +32,56 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
   document.querySelector('.links').classList.toggle('show');
 });
 
-// Snackbar helper
+// Snackbar helper (responsive bottom)
 function showSnackbar(message, success=true) {
   let snackbar = document.createElement('div');
   snackbar.className = 'snackbar';
   snackbar.textContent = message;
   snackbar.style.background = success ? '#4caf50' : '#f44336';
+  snackbar.style.position = 'fixed';
+  snackbar.style.left = '50%';
+  snackbar.style.transform = 'translateX(-50%)';
+  snackbar.style.padding = '12px 24px';
+  snackbar.style.color = '#fff';
+  snackbar.style.borderRadius = '5px';
+  snackbar.style.zIndex = '9999';
+  snackbar.style.opacity = '0';
+  snackbar.style.transition = 'opacity 0.3s ease, bottom 0.3s ease';
+
   document.body.appendChild(snackbar);
-  setTimeout(() => { snackbar.classList.add('show'); }, 10);
-  setTimeout(() => { snackbar.classList.remove('show'); setTimeout(() => snackbar.remove(), 300); }, 3000);
+
+  // Responsive bottom offset
+  const bottomOffset = window.innerWidth <= 768 ? 90 : 70; // higher on small screens
+  setTimeout(() => { 
+    snackbar.style.bottom = bottomOffset + 'px';
+    snackbar.style.opacity = '1';
+  }, 10);
+
+  setTimeout(() => { 
+    snackbar.style.opacity = '0';
+    snackbar.style.bottom = (bottomOffset - 20) + 'px';
+    setTimeout(() => snackbar.remove(), 300); 
+  }, 3000);
 }
 
-// Contact form submission
+// Contact form submission with validation
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
+
+  const name = this.querySelector("input[name='name']").value.trim();
+  const email = this.querySelector("input[name='email']").value.trim();
+  const message = this.querySelector("textarea[name='message']").value.trim();
+
+  if (!name || !email || !message) {
+    showSnackbar("Please fill in all fields.", false);
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    showSnackbar("Please enter a valid email address.", false);
+    return;
+  }
 
   const submitButton = this.querySelector("button");
   const originalText = submitButton.textContent;
@@ -57,12 +93,13 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     body: new FormData(this)
   })
   .then(res => res.text())
-  .then(data => {
-    showSnackbar("Message sent successfully!", true);
+ .then(data => {
+    showSnackbar("Your message has been successfully sent! I will review it shortly and get back to you as soon as possible. Thank you for reaching out! ✅", true);
     this.reset();
     submitButton.disabled = false;
     submitButton.textContent = originalText;
-  })
+})
+
   .catch(err => {
     console.error(err);
     showSnackbar("Error sending message. Please try again.", false);
